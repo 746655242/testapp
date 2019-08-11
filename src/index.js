@@ -1,8 +1,21 @@
 const express =require('express');
+const https=require("https");
+const http=require("https");
 const path=require("path");
 const app=express();
 
 // require('./database');
+
+var fs=require("fs");
+
+//同步读取密钥和签名证书
+ var options = {
+  key:fs.readFileSync('./key/tao.caipiaodog.com_key.key'),
+  cert:fs.readFileSync('./key/tao.caipiaodog.com_chain.crt')
+}
+
+var httpsServer = https.createServer(options,app);
+//var httpServer = http.createServer(app); 
 
 const exphbs=require("express-handlebars");
 const methodOverride=require('method-override');
@@ -36,6 +49,9 @@ app.use(require('./routes/notes'));
 app.use(require('./routes/users'));
 
 
-app.listen(app.get('port'),()=>{
-    console.log('启动端口',app.get('port'));
-});
+
+httpsServer.listen(app.get('port'));
+
+// app.listen(app.get('port'),()=>{
+//     console.log('启动端口',app.get('port'));
+// });
