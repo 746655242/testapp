@@ -36,10 +36,6 @@ app.use(require('./routes/notes'));
 app.use(require('./routes/users'));
 
 
-
-
-
-
 app.listen(app.get('port'),()=>{
     console.log('启动端口',app.get('port'));
 });
