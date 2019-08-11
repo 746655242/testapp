@@ -2,13 +2,13 @@ const express =require('express');
 const path=require("path");
 const app=express();
 
-require('./database');
+// require('./database');
 
 const exphbs=require("express-handlebars");
 const methodOverride=require('method-override');
 const session=require('express-session');
 
-app.set('port',process.env.PORT||3000);
+app.set('port',process.env.PORT||80);
 app.set('views',path.join(__dirname,'views'));
 app.engine('.hbs',exphbs({
     defaultLayout:'main',
