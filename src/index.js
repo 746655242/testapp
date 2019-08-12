@@ -15,7 +15,7 @@ var fs=require("fs");
 }
 
 var httpsServer = https.createServer(options,app);
-//var httpServer = http.createServer(app); 
+var httpServer = http.createServer(app); 
 
 const exphbs=require("express-handlebars");
 const methodOverride=require('method-override');
@@ -50,8 +50,9 @@ app.use(require('./routes/users'));
 
 
 
-httpsServer.listen(app.get('port'));
+//httpServer.listen(80);
+httpsServer.listen(443);
 
-// app.listen(app.get('port'),()=>{
-//     console.log('启动端口',app.get('port'));
-// });
+app.listen(app.get('port'),()=>{
+    console.log('启动端口',app.get('port'));
+});
